@@ -44,12 +44,8 @@ router.post("/api/register", async (req, res) => {
     // console.log(otpauth_url);
 
     const qrCodeImg = await qrcode.toDataURL(otpauth_url);
-    // console.log("QR Code:");
-    // console.log(qrCodeImg);
-    // convert the string to array first and split the string at the comma and take the second part
     const spiltImage = await qrCodeImg.split(",")[1];
 
-    // store the image in the server
     fs.writeFile(
       path.join(__dirname, `../uploads/${user._id}.png`),
       spiltImage,
