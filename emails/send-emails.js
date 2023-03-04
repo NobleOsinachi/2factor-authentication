@@ -16,12 +16,12 @@ const sendEmail = async (options) => {
 
   // 2) Define the email options
   const mailOptions = {
-    from: `Rit-Rides <${SMTP_USER}>`,
+    from: `AbCode <${SMTP_USER}>`,
     to: options.email,
     subject: options.subject,
     text: options.message,
     html: options.html,
-      message: options.message,
+    message: options.message,
     attachments: options.attachments,
   };
 
